@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Options Analytics Platform</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            Options Analytics
+        </div>
+
+        <div class="nav-label">
+            Quantitative Finance
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <p class="eyebrow">
+                QUANTITATIVE FINANCE
+            </p>
+
+            <h1>
+                Options Analytics Platform
+            </h1>
+
+            <p class="subtitle">
+                Price options, analyze risk sensitivities, and explore
+                option payoffs using the Black-Scholes model.
+            </p>
+
+        </section>
+
+
+        <section class="calculator">
+
+            <div class="panel">
+
+                <h2>Option Parameters</h2>
+
+                <p class="panel-description">
+                    Enter the market assumptions for your option.
+                </p>
+
+
+                <div class="input-grid">
+
+                    <div class="input-group">
+                        <label>Stock Price</label>
+
+                        <input
+                            type="number"
+                            id="stockPrice"
+                            value="50"
+                            step="0.01"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Strike Price</label>
+
+                        <input
+                            type="number"
+                            id="strikePrice"
+                            value="55"
+                            step="0.01"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Time to Expiration (Years)</label>
+
+                        <input
+                            type="number"
+                            id="timeToExpiration"
+                            value="0.25"
+                            step="0.01"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Volatility</label>
+
+                        <input
+                            type="number"
+                            id="volatility"
+                            value="0.30"
+                            step="0.01"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Risk-Free Rate</label>
+
+                        <input
+                            type="number"
+                            id="riskFreeRate"
+                            value="0.05"
+                            step="0.01"
+                        >
+                    </div>
+
+                </div>
+
+
+                <button onclick="calculateOption()">
+                    Calculate Option
+                </button>
+
+            </div>
+
+
+            <div class="panel results-panel">
+
+                <h2>Option Valuation</h2>
+
+                <div class="price-grid">
+
+                    <div class="result-card">
+                        <span>Call Price</span>
+                        <strong id="callPrice">—</strong>
+                    </div>
+
+                    <div class="result-card">
+                        <span>Put Price</span>
+                        <strong id="putPrice">—</strong>
+                    </div>
+
+                </div>
+
+
+                <h3>Greeks</h3>
+
+                <div class="greeks-grid">
+
+                    <div class="metric">
+                        <span>Call Delta</span>
+                        <strong id="callDelta">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Put Delta</span>
+                        <strong id="putDelta">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Gamma</span>
+                        <strong id="gamma">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Vega</span>
+                        <strong id="vega">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Call Theta</span>
+                        <strong id="callTheta">—</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Call Rho</span>
+                        <strong id="callRho">—</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<section class="strategy-section">
+
+    <div class="section-heading">
+        <p class="eyebrow">STRATEGY ANALYSIS</p>
+
+        <h2>
+            Options Payoff Analysis
+        </h2>
+
+        <p>
+            Interactive profit and loss profiles for common options strategies.
+        </p>
+    </div>
+
+
+    <div class="graph-card">
+        <div id="bullCallGraph"></div>
+    </div>
+
+
+    <div class="graph-card">
+        <div id="bearPutGraph"></div>
+    </div>
+
+
+    <div class="graph-card">
+        <div id="straddleGraph"></div>
+    </div>
+
+
+    <div class="graph-card">
+        <div id="strangleGraph"></div>
+    </div>
+
+</section>
+        <section class="info-section">
+
+            <div>
+                <h2>Black-Scholes Model</h2>
+
+                <p>
+                    The platform uses the Black-Scholes framework to
+                    estimate European option prices and calculate
+                    their sensitivity to key market variables.
+                </p>
+            </div>
+
+            <div>
+                <h2>Risk Analysis</h2>
+
+                <p>
+                    Greeks measure how an option's value responds to
+                    changes in underlying market conditions such as
+                    price, volatility, time and interest rates.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Options Analytics Platform · Quantitative Finance Project
+    </footer>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
